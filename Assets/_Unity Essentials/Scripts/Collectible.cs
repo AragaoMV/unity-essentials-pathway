@@ -6,6 +6,7 @@ public class Collectible : MonoBehaviour
 {
 
     public float rotationSpeed;
+    public GameObject onCollectEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,12 @@ public class Collectible : MonoBehaviour
         transform.Rotate(0,rotationSpeed,0);
     }
 
-    //Destroy the collectible
+   
     private void OnTriggerEnter(Collider other) {
+         //Destroy the collectible
         Destroy(gameObject);
+
+        //Iniciate Particle VFX
+        Instantiate(onCollectEffect, transform.position, transform.rotation);
     }
 }
