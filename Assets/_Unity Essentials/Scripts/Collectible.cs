@@ -17,4 +17,9 @@ public class Collectible : MonoBehaviour
     {
         transform.Rotate(0,rotationSpeed,0);
     }
+
+    //Destroy the collectible
+    private void OnTriggerEnter(Collider other) {
+        Destroy(GameObject)
+    }
 }
